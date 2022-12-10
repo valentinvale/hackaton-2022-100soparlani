@@ -1,7 +1,7 @@
 const express = require("express");
 const fs = require("fs");
 const sharp = require("sharp");
-const {Client} = require("pg");
+const { Client } = require("pg");
 const ejs = require("ejs");
 const { render } = require("express/lib/response");
 const sass = require("sass");
@@ -15,10 +15,9 @@ const { request } = require("http");
 
 app = express();
 
-app.get(["/", "/home", "/index", "/appointment"], function(req, res) {
-    res.render("pagini/index.ejs");  
+app.get(["/", "/home", "/index", "/appointment"], function (req, res) {
+  res.render("pagini/index.ejs");
 });
 
-
 app.listen(8080);
-console.log("A pornit")
+console.log("A pornit");
