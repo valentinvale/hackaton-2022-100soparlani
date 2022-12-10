@@ -28,8 +28,14 @@ window.addEventListener("DOMContentLoaded", function() {
         var val = input.value;
         var obFiltrat = [];
         for(var i = 0; i < obSucursale.length; i++)
-            if(obSucursale[i].br_city.toLowerCase().indexOf(val.toLowerCase()) != -1)
+            if(obSucursale[i].br_city.toLowerCase().indexOf(val.toLowerCase()) != -1 || 
+            obSucursale[i].location.address.county.toLowerCase().indexOf(val.toLowerCase()) != -1 ||
+            obSucursale[i].brn.toLowerCase().indexOf(val.toLowerCase()) != -1 ||
+            obSucursale[i].br_street.toLowerCase().indexOf(val.toLowerCase()) != -1){
                 obFiltrat.push(obSucursale[i]);
+                console.log(obSucursale[i].location.address.county);
+            }
+                
         
 
         var divFiltrare = document.getElementById("divFiltrare");
@@ -37,7 +43,22 @@ window.addEventListener("DOMContentLoaded", function() {
         for(var i = 0; i < obFiltrat.length; i++){
             var div = document.createElement("div");
             div.className = "sucursala";
-            div.innerHTML = obFiltrat[i].br_city;
+            var p_nume = document.createElement("p");
+            p_nume.className = "p_nume";
+            p_nume.innerHTML = obFiltrat[i].brn;
+            div.appendChild(p_nume);
+            var p_oras = document.createElement("p");
+            p_oras.className = "p_oras";
+            p_oras.innerHTML = obFiltrat[i].br_city;
+            div.appendChild(p_oras);
+            var p_judet = document.createElement("p");
+            p_judet.className = "p_judet";
+            p_judet.innerHTML = obFiltrat[i].location.address.county;
+            div.appendChild(p_judet);
+            var p_strada = document.createElement("p");
+            p_strada.className = "p_strada";
+            p_strada.innerHTML = obFiltrat[i].br_street;
+            div.appendChild(p_strada);
             divFiltrare.appendChild(div);
         }
 
