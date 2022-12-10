@@ -14,9 +14,23 @@
 }
 #backButton {
   cursor: pointer;
+  scale: 1;
+  transition: 0.4s;
 }
 #backButton:hover {
   box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  scale: 1.5;
+  transition: 0.4s;
+}
+#imgClickAndChange {
+  cursor: pointer;
+  scale: 1;
+  transition: 0.4s;
+}
+#imgClickAndChange:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  scale: 1.5;
+  transition: 0.4s;
 }
 @font-face {
   font-family: fontBcr;
@@ -36,10 +50,6 @@
   bottom: 0;
   right: 0;
 }
-/*.test img {
-  height: auto;
-  max-width: 1000000%;
-} */
 .button {
   background-color: transparent;
   border: none;
