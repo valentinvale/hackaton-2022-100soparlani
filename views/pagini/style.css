@@ -1,0 +1,58 @@
+.header {
+  color: white;
+  background: #00497b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* width: 100%; */
+  display: flex;
+  padding: 0.5%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#backButton {
+  cursor: pointer;
+}
+#backButton:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+@font-face {
+  font-family: fontBcr;
+  src: url(fonts/Neo\ Sans\ Std\ Bold.otf);
+  /* font-weight: bold; */
+}
+
+.fontBcr {
+  font-family: fontBcr;
+}
+.test {
+  background-color: red;
+  /* height: fit-content;
+  width: 20px; */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+/*.test img {
+  height: auto;
+  max-width: 1000000%;
+} */
+.button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  margin-top: 120%;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+.icons {
+  color: white;
+  position: fixed;
+  background-color: white;
+}
