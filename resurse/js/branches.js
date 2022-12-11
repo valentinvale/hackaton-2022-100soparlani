@@ -20,11 +20,13 @@ window.addEventListener("DOMContentLoaded", function() {
     }).then(function(json){
         console.log('data',json);
         var btn = document.getElementById("filtrare");
-    btn.onclick = function(){
+        var input_suc = document.getElementById("inp-nume");
+    input_suc.oninput = function(){
         console.log("s-a apasat butonul");
         obSucursale = json.serviceResponse;
         console.log(obSucursale);
         var input = document.getElementById("inp-nume");
+        console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",input.value);
         var val = input.value;
         var obFiltrat = [];
         for(var i = 0; i < obSucursale.length; i++)
@@ -37,11 +39,21 @@ window.addEventListener("DOMContentLoaded", function() {
             }
                 
         
+        
 
         var divFiltrare = document.getElementById("divFiltrare");
-        divFiltrare.innerHTML = "";
+
+        if(input.value == "")
+            divFiltrare.innerHTML = "";
+        else{
+            divFiltrare.innerHTML = "";
         for(var i = 0; i < obFiltrat.length; i++){
             var div = document.createElement("div");
+            var radio = document.createElement("input");
+            radio.type = "radio";
+            radio.name = "radio-sucursala";
+            radio.className = "radio-sucursala";
+            div.appendChild(radio);              
             div.className = "sucursala";
             var p_nume = document.createElement("p");
             p_nume.className = "p_nume";
@@ -59,8 +71,23 @@ window.addEventListener("DOMContentLoaded", function() {
             p_strada.className = "p_strada";
             p_strada.innerHTML = obFiltrat[i].br_street;
             div.appendChild(p_strada);
+            
+
             divFiltrare.appendChild(div);
         }
+        
+        }
+
+        var btn_submit_sucursala = document.getElementById("submit-sucursala");
+        btn_submit_sucursala.onclick = function(){
+            var radio = document.getElementsByClassName("radio-sucursala");
+            for(var i = 0; i < radio.length; i++)
+            {
+                if(radio[i].checked)
+                    console.log(obFiltrat[i].brn)
+            }
+        }    
+
 
 
         
