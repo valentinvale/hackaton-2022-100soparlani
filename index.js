@@ -11,10 +11,12 @@ const crypto = require("crypto");
 const session = require("express-session");
 const nodemailer = require("nodemailer");
 const cors = require("cors");
+const winston = require("winston");
 
 
 const res = require("express/lib/response");
 const { request } = require("http");
+const { getMaxListeners } = require("process");
 
 
 // import path from 'path';
@@ -22,6 +24,8 @@ const { request } = require("http");
 
 
 const app = express();
+
+
 
 app.set("view engine", "ejs");
 
@@ -32,7 +36,8 @@ app.use(cors());
 console.log("Director proiect:", __dirname);
 
 const obGlobal = {
-    obSucursale: null
+    obSucursale: null,
+    emailServer: "bcrgeorge@getMaxListeners.ro"
 }
 
 app.get(["/", "/home", "/index", "/appointment"], function(req, res) {
@@ -41,7 +46,7 @@ app.get(["/", "/home", "/index", "/appointment"], function(req, res) {
 
 app.get("/branches", function(req, res) {
      
-    
+    console.log("am intrat in branches");
     res.render("pagini/branches"); 
 });
 
@@ -50,6 +55,29 @@ app.get("/data", function(req, res) {
     obGlobal.obSucursale = JSON.parse(buf);
     res.setHeader("Content-Type", "application/json");
     res.json(obGlobal.obSucursale);
+});
+
+var sucs = JSON.parse(fs.readFileSync("./resurse/json/sucursale.json", "utf8"));
+var sucsParsed = sucs.serviceResponse;
+console.log(sucsParsed);
+
+
+app.get("/appoint/:orgId", function(req, res) {
+    
+    console.log(req, res);
+    var orgId = +req.params.orgId;
+    var suc = sucsParsed.find(s => s.orgId == orgId)
+    
+    res.render("pagini/appoint", {suc: suc});
+    console.log("A intrat in appoint")
+    
+
+});
+
+app.get("/sentmail", function(req, res) {
+    trimiteMail()
+    res.render("pagini/sentmail");
+    console.log("A intrat in sentmail")
 });
 
 

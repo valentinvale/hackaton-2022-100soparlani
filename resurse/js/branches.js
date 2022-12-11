@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", function() {
             divFiltrare.innerHTML = "";
         for(var i = 0; i < obFiltrat.length; i++){
             var div = document.createElement("div");
+            
             var radio = document.createElement("input");
             radio.type = "radio";
             radio.name = "radio-sucursala";
@@ -84,7 +85,14 @@ window.addEventListener("DOMContentLoaded", function() {
             for(var i = 0; i < radio.length; i++)
             {
                 if(radio[i].checked)
+                {
                     console.log(obFiltrat[i].brn)
+                    var radio_href = "appoint/" + obFiltrat[i].orgId;
+                    var link = document.getElementById("ancora_submit");
+                    link.href = radio_href;
+                    console.log(link.href)
+                }
+                    
             }
         }    
 

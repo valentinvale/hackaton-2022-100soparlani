@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BCR-Appoint</title>
+       
+
+<script>
+
+window.addEventListener("DOMContentLoaded", function(){
+//     async function trimiteMail(email, subiect, mesajText){
+//     var transp= nodemailer.createTransport({
+//         service: "gmail",
+//         secure: false,
+//         auth:{//date login 
+//             user:"bcrgeorge@gmail.com",
+//             pass:"hawjiqtsbvujhofw"
+//         },
+//         tls:{
+//             rejectUnauthorized:false
+//         }
+//     });
+    
+//     await transp.sendMail({
+//         from:obGlobal.emailServer,
+//         to:email,
+//         subject:subiect,
+//         text:mesajText 
+        
+        
+//     })
+//     console.log("trimis mail");
+// }
+
+    
+    
+    var btn = document.getElementById("confirmare")
+    //var href = "sentmail";
+    btn.onclick=function(){
+        var recipient = document.getElementById("mail_confirmare").value;
+        //trimiteMail(recipient, "Confirmare programare", "Confirmare programare");
+        var div_confirmat = document.getElementById("confirmat");
+        div_confirmat.innerHTML = "Confirmare trimisa la adresa de mail: " + recipient;
+
+
+    }
+})
+
+
+
+</script>
+    </head>
+    <body>
+        <h1>HEY, ai ales sucursala <%- locals.suc.brn %></h1>
+        <input type="email" id="mail_confirmare">
+        <button id="confirmare">Confirma</button>
+        <div id="confirmat">
+
+        </div>    
+           
+             
+
+    </body>
+    
+</html>    
