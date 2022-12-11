@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+.header {
+  color: white;
+  background: #00497b;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* width: 100%; */
+  display: flex;
+  padding: 0.5%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+body {
+  background-color: #d7efff;
+}
+#backButton {
+  cursor: pointer;
+  scale: 1;
+  transition: 0.4s;
+}
+#backButton:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  scale: 1.5;
+  transition: 0.4s;
+}
+#imgClickAndChange {
+  cursor: pointer;
+  scale: 1;
+  transition: 0.4s;
+}
+#imgClickAndChange:hover {
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+  scale: 1.5;
+  transition: 0.4s;
+}
+@font-face {
+  font-family: fontBcr;
+  src: url(../fonts/Neo\ Sans\ Std\ Bold.otf);
+}
+@font-face {
+  font-family: fontBcrRegular;
+  src: url(../fonts/Neo\ Sans\ Std\ Regular.otf);
+}
+@font-face {
+  font-family: fontBcrLight;
+  src: url(../fonts/Neo\ Sans\ Std\ Light.otf);
+}
+.fontBcr {
+  font-family: fontBcr;
+}
+.fontBcrRegular {
+  font-family: fontBcrRegular;
+}
+.fontBcrLight {
+  font-family: fontBcrLight;
+}
+
+.test {
+  background-color: red;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.button {
+  background-color: transparent;
+  border: none;
+  color: black;
+  margin-top: 120%;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 24px;
+}
+.icons {
+  color: white;
+  position: fixed;
+  background-color: white;
+}
+.location {
+  width: 80%;
+  margin: auto;
+  padding: 80px 0;
+}
+.location iframe {
+  width: 100%;
+}
