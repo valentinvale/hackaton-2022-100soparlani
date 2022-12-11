@@ -93,3 +93,13 @@ body {
 .location iframe {
   width: 100%;
 }
+.emailInput {
+  /* width: 50%;
+  margin: auto;
+  font-size: 30px;
+  margin-top: 20px; */
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+}
