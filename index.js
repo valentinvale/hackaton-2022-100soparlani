@@ -41,7 +41,19 @@ const obGlobal = {
 }
 
 app.get(["/", "/home", "/index", "/appointment"], function(req, res) {
-    res.render("pagini/index");  
+    res.render("pagini/home");  
+});
+
+app.get("/captcha", function(req, res) {
+    res.render("pagini/captcha");  
+});
+
+app.get("/subjectOptions", function(req, res){
+    res.render("pagini/subjectOptions");
+});
+
+app.get("/harta", function(req, res) {
+    res.render("pagini/harta");  
 });
 
 app.get("/branches", function(req, res) {

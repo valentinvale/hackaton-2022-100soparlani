@@ -22,47 +22,11 @@
     />
     <title>Hartă</title>
     <meta charset="utf-8" />
-
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        //     async function trimiteMail(email, subiect, mesajText){
-        //     var transp= nodemailer.createTransport({
-        //         service: "gmail",
-        //         secure: false,
-        //         auth:{//date login
-        //             user:"bcrgeorge@gmail.com",
-        //             pass:"hawjiqtsbvujhofw"
-        //         },
-        //         tls:{
-        //             rejectUnauthorized:false
-        //         }
-        //     });
-
-        //     await transp.sendMail({
-        //         from:obGlobal.emailServer,
-        //         to:email,
-        //         subject:subiect,
-        //         text:mesajText
-
-        //     })
-        //     console.log("trimis mail");
-        // }
-
-        var btn = document.getElementById("confirmare");
-        //var href = "sentmail";
-        btn.onclick = function () {
-          var recipient = document.getElementById("mail_confirmare").value;
-          //trimiteMail(recipient, "Confirmare programare", "Confirmare programare");
-          var div_confirmat = document.getElementById("confirmat");
-          div_confirmat.innerHTML =
-            "Confirmare trimisa la adresa de mail: " + recipient;
-        };
-      });
-    </script>
   </head>
+
   <body>
     <div class="header">
-      <a href="/branches"
+      <a href="/subjectOptions"
         ><i
           id="backButton"
           class="fa fa-chevron-left"
@@ -71,14 +35,10 @@
         ></i
       ></a>
       <!-- <i id = "backButton" class="fa fa-chevron-left" aria-hidden="true"></i> -->
-      <p class="fontBcr" style="font-size: larger">
-        Drumul spre <%- locals.suc.brn %>
-      </p>
+      <p class="fontBcr" style="font-size: larger">Drumul spre BCR-ul tau</p>
       <img alt="" id="imgClickAndChange" style="width:25px; height: auto;"
       onclick="changeImage()" src="/resurse/images/ro.png" /img>
     </div>
-    <!-- <h1>HEY, ai ales sucursala <%- locals.suc.brn %></h1> -->
-
     <section class="location">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2847.2870622788932!2d26.0938774!3d44.4682883!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b2020c5fbe6573%3A0xa1f27bbd9b583f0b!2sStrada%20Moliere%2012%2C%20Bucure%C8%99ti!5e0!3m2!1sro!2sro!4v1669594834278!5m2!1sro!2sro"
@@ -91,10 +51,5 @@
       >
       </iframe>
     </section>
-    <div class="emailInput">
-      <input type="email" id="mail_confirmare" />
-      <button id="confirmare">Confirma</button>
-      <div id="confirmat"></div>
-    </div>
   </body>
 </html>
